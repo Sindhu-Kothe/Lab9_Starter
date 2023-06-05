@@ -69,21 +69,21 @@
     </form>
 
     <section id="error-btns">
-      <button>Console Log</button>
-      <button>Console Error</button>
-      <button>Console Count</button>
-      <button>Console Warn</button>
-      <button>Console Assert</button>
-      <button>Console Clear</button>
-      <button>Console Dir</button>
-      <button>Console dirxml</button>
-      <button>Console Group Start</button>
-      <button>Console Group End</button>
-      <button>Console Table</button>
-      <button>Start Timer</button>
-      <button>End Timer</button>
-      <button>Console Trace</button>
-      <button>Trigger a Global Error</button>
+      <button id = "console-log">Console Log</button>
+      <button id = "console-error">Console Error</button>
+      <button id = "console-count">Console Count</button>
+      <button id = "console-warn">Console Warn</button>
+      <button id = "assert">Console Assert</button>
+      <button id = "clear">Console Clear</button>
+      <button id = "dir">Console Dir</button>
+      <button id = "dirxml">Console dirxml</button>
+      <button id = "grpstart">Console Group Start</button>
+      <button id = "grpend">Console Group End</button>
+      <button id = "table">Console Table</button>
+      <button id = "timer">Start Timer</button>
+      <button id = "timerend">End Timer</button>
+      <button id ="trace">Console Trace</button>
+      <button id = "gerror">Trigger a Global Error</button>
     </section>
   </main>
 
@@ -102,6 +102,98 @@
 
     // Start your code here
     // You may move this JS to another file if you wish
+    
+    const consoleLog = document.getElementById("console-log");
+    function logFunc(){
+      console.log("Whats up!");
+    } 
+    consoleLog.addEventListener('click', logFunc);
+    
+    const consoleError = document.getElementById("console-error");    
+    function errorFunc(){
+      console.log("you messed up big time");
+    } 
+    consoleError.addEventListener('click', errorFunc);
+    
+    const consoleCount = document.getElementById("console-count");    
+    function countFunc(){
+      console.count("number of times you hit the button");
+    } 
+    consoleCount.addEventListener('click', countFunc);
+    
+    const consoleWarn = document.getElementById("console-warn");    
+    function warnFunc(){
+      console.warn("no");
+    } 
+    consoleWarn.addEventListener('click', warnFunc);
+    
+    const consoleAssert = document.getElementById("assert");    
+    function assertFunc(){
+      console.assert(false, "no");
+    } 
+    consoleAssert.addEventListener('click', assertFunc);
+    
+    const consoleClear = document.getElementById("clear");    
+    function clearFunc(){
+      console.clear();
+    } 
+    consoleClear.addEventListener('click', clearFunc);
+    
+    const consoleDir = document.getElementById("dir");    
+    function divFunc(){
+      var arrayString = ["This", "is", "an" "array"];
+      console.dir(arrayString);
+    } 
+    consoleDir.addEventListener('click', divFunc);
+    
+    const consoleDirxml = document.getElementById("dirxml");    
+    function dirXMLFunc(){
+      console.dirxml(document.querySelector("input"));
+    } 
+    consoleDirxml.addEventListener('click', dirXMLFunc);
+    
+    
+    const consoleGrpStart = document.getElementById("grpstart");    
+    function grpStartFunc(){
+      console.group();
+    } 
+    consoleGrpStart.addEventListener('click', grpStartFunc);
+    
+    const consoleGrpEnd = document.getElementById("grpend");    
+    function grpEndFunc(){
+      console.groupEnd();
+    } 
+    consoleGrpEnd.addEventListener('click', grpEndFunc);
+    
+    const consoleTable = document.getElementById("table");    
+    function tableFunc(){
+      console.table(["tables", "chairs", "food"]);
+    } 
+    consoleTable.addEventListener('click', tableFunc);
+    
+    const consoleTimer = document.getElementById("timer");    
+    function timerFunc(){
+      console.timer();
+    } 
+    consoleTimer.addEventListener('click', timerFunc);
+    
+    const consoleEndTimer = document.getElementById("timerend");    
+    function timerEndFunc(){
+      console.timerEnd();
+    } 
+    consoleEndTimer.addEventListener('click', timerEndFunc);
+    
+    const consoleTrace = document.getElementById("trace");    
+    function traceFunc(){
+      function secondfunc(){
+        function thirdFunc(){
+          console.trace();
+        }
+      }
+    } 
+    consoleTrace.addEventListener('click', traceFunc);
+    
+    
   </script>
 </body>
 
