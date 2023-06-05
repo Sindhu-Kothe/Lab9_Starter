@@ -112,6 +112,11 @@
     const consoleError = document.getElementById("console-error");    
     function errorFunc(){
       console.log("you messed up big time");
+      try{
+        notaRealFuncDude();
+      }catch(err){
+        console.log("try and catch");
+      }
     } 
     consoleError.addEventListener('click', errorFunc);
     
